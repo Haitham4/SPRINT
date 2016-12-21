@@ -18,7 +18,7 @@ Since pre-computing human HSPs takes about two days on 12 cores, we provide the 
 
 You need g++ compiler, OpenMP(http://openmp.org/wp/) library(if you want to run the program in parallel), and boost(http://www.boost.org/) library(only for compute_HSPs) 
 
-1. Enter the directory SPRINT/
+1. Enter the directory of SPRINT
 
 2. 
  * to compile the serial version of compute_HSPs type "make compute_HSPs_serial" (require g++, boost library)
@@ -28,7 +28,7 @@ You need g++ compiler, OpenMP(http://openmp.org/wp/) library(if you want to run 
 
 ###Toy Examples
 
-Please go the the directory SPRINT/toy_example to see the input format of SPRINT. There is another ReadMe.txt file in that directory, which describes how to run SPRINT.
+Please go the the directory SPRINT/toy_example to see the inputs format of SPRINT. 
 
 ###Input files
 
@@ -52,13 +52,13 @@ They are:
 
 2. Positive training file: the file that contains known interactions
 
- Each known interaction is one line.
+ Each known interaction forms one line.
 
  The format is: < Protein1_name > < Protein2_name >
 
 3. Testing files (optional)	: the files that contains testing interactions	
 
- Each known interaction is one line.
+ Each known interaction forms one line.
 
  The format is: < Protein1_name > < Protein2_name >
 
@@ -120,8 +120,9 @@ The commands for running SPRINT on the toy dataset in SPRINT/toy_example are giv
 ```
 bin/predict_interactions -p toy_example/protein_sequences.seq -h HSP/hsps_toy_example -tr toy_example/train_positive.txt -e -o toy_example/result_interactome.txt
 ```
-###Copyright
+###Author 
+Yiwei Li, Lucian Ilie
 
-May 2016, Yiwei Li, Lucian Ilie
 Department of Computer Science
+
 The University of Western Ontario
