@@ -44,59 +44,84 @@ They are:
 ###Input files format
 
 1. protein sequence file: the file that contains the entire proteome sequences for an organism
-For each protein, there are two lines.
-The first line contain a ">" followed by the protein name.
-The second line is the protein sequence. Note here each sequence has to be in the same line. SPRINT could handle the 23 amino acids in the PAM120 matrix(http://blast.advbiocomp.com/blast-1.3/blast/PAM120) plus 'U' and 'O'. If the input sequences contain other than those, the program will exit and notify the user.
+ For each protein, there are two lines.
+
+ The first line contain a ">" followed by the protein name.
+
+ The second line is the protein sequence. Note here each sequence has to be in the same line. SPRINT could handle the 23 amino acids in the PAM120 matrix(http://blast.advbiocomp.com/blast-1.3/blast/PAM120) plus 'U' and 'O'. If the input sequences contain other than those, the program will exit and notify the user.
 
 2. Positive training file: the file that contains known interactions
-Each known interaction is one line.
-The format is: <Protein1_name> <Protein2_name>
+
+ Each known interaction is one line.
+
+ The format is: < Protein1_name > < Protein2_name >
 
 3. Testing files (optional)	: the files that contains testing interactions	
-Each known interaction is one line.
-The format is: <Protein1_name> <Protein2_name>
+
+ Each known interaction is one line.
+
+ The format is: < Protein1_name > < Protein2_name >
 
 ###How to run SPRINT
 
 SPRINT consists of two parts: compute_HSPs and predict_interactions.
 
 1. compute_HSPs computes the HSPs in a certain organism.
-In order to run compute_HSPs type "bin/compute_HSPs" followed by options:
 
-Options:
+ In order to run compute_HSPs type "bin/compute_HSPs" followed by options:
 
-* -p <protein_file> (required)
-* -h <hsp_output_file_name> (required)
-* -Thit <an integer, the threshold Thit > (optional, default 15) 
-* -Tsim <an integer, the threshold Tsim > (optional, default 35) 
+ Options:
+
+ -p < protein_file > (required)
+
+ -h < hsp_output_file_name > (required)
+
+ -Thit < an integer, the threshold Thit > (optional, default 15) 
+
+ -Tsim < an integer, the threshold Tsim > (optional, default 35) 
 
 2. predict_interactions calculates the scores for given pairs or perform the entire interactome prediction.
  In order to run predict_interactions type "bin/predict_interactions" followed by options:
-* -p <protein_file> 
-* -h <hsp_file> (required)
-* -Tdom <an integer, the threshold Tdom > (optional, default 40)
-* -tr <training_file> (required)
-* -pos <positive_testing_file> (optional)
-* -neg <negative_testing_file> (optional) 
-* -o <output_file> (required)
-* -e (if you need to perform the entire proteome prediction) (optional)
+ 
+ -p < protein_file > (required)
 
- Example
- -------
+ -h < hsp_file > (required)
+
+ -Tdom < an integer, the threshold Tdom > (optional, default 40)
+
+ -tr < training_file > (required)
+
+ -pos < positive_testing_file > (optional)
+
+ -neg < negative_testing_file > (optional) 
+
+ -o < output_file > (required)
+
+ -e (if you need to perform the entire proteome prediction) (optional)
+
+###Example
+
 The commands for running SPRINT on the toy dataset in SPRINT/toy_example are given below.
+
 1. compute_HSPs
-bin/compute_HSPs -p toy_example/protein_sequences.seq -h HSP/hsps_toy_example 
-The above command creates a file hsps_toy_example in the directory SPRINT/HSP
+
+ ```
+ bin/compute_HSPs -p toy_example/protein_sequences.seq -h HSP/hsps_toy_example 
+ ```
+ The above command creates a file hsps_toy_example in the directory SPRINT/HSP
 
 2. predict_interactions (use either 2.1 or 2.2)
-..2.1 calculate the scores for the pairs in toy_example/test_positive.txt and toy_example/test_negative.txt.
-bin/predict_interactions -p toy_example/protein_sequences.seq -h HSP/hsps_toy_example -tr toy_example/train_positive.txt -pos toy_example/test_positive.txt -neg toy_example/test_negative.txt -o toy_example/result_test.txt
 
-..2.2 perform the entire interactome prediction.
+ 2.1 calculate the scores for the pairs in toy_example/test_positive.txt and toy_example/test_negative.txt.
+ ```
+ bin/predict_interactions -p toy_example/protein_sequences.seq -h HSP/hsps_toy_example -tr toy_example/train_positive.txt -pos toy_example/test_positive.txt -neg toy_example/test_negative.txt -o toy_example/result_test.txt
+ ```
+ 2.2 perform the entire interactome prediction.
+```
 bin/predict_interactions -p toy_example/protein_sequences.seq -h HSP/hsps_toy_example -tr toy_example/train_positive.txt -e -o toy_example/result_interactome.txt
+```
+###Copyright
 
-Copyright
----------
 May 2016, Yiwei Li, Lucian Ilie
 Department of Computer Science
 The University of Western Ontario
