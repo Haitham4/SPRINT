@@ -1,8 +1,11 @@
 ##The Source code of SPRINT (Scoring PRotein INTeractions)
 
-Author: Yiwei Li, Lucian Ilie
+Author: 
+
+Yiwei Li, Lucian Ilie
 
 Contact:
+
 Yiwei Li (yli922@uwo.ca)
 Lucian Ilie (ilie@uwo.ca)
 Department of Computer Science
@@ -76,9 +79,11 @@ SPRINT consists of two parts: compute_HSPs and predict_interactions.
 
  -h < hsp_output_file_name > (required)
 
- -Thit < an integer, the threshold Thit > (optional, default 15) 
+ -Thit < an integer, the threshold Thit > (optional, default: 15) 
 
- -Tsim < an integer, the threshold Tsim > (optional, default 35) 
+ -Tsim < an integer, the threshold Tsim > (optional, default: 35) 
+
+ -M < an integer, Scoring matrix. 1: PAM120, 2: BLOSUM80, 3: BLOSUM62> (optional, default: PAM120)
 
 2. predict_interactions calculates the scores for given pairs or perform the entire interactome prediction.
  In order to run predict_interactions type "bin/predict_interactions" followed by options:
