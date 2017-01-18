@@ -7,8 +7,11 @@ Yiwei Li, Lucian Ilie
 Contact:
 
 Yiwei Li (yli922@uwo.ca)
+
 Lucian Ilie (ilie@uwo.ca)
+
 Department of Computer Science
+
 The University of Western Ontario, London, Ontario, Canada
 
 ###Description
