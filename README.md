@@ -6,9 +6,7 @@ Yiwei Li, Lucian Ilie
 
 Contact:
 
-Yiwei Li (yli922@uwo.ca)
-
-Lucian Ilie (ilie@uwo.ca)
+Yiwei Li (yli922@uwo.ca), Lucian Ilie (ilie@uwo.ca)
 
 Department of Computer Science
 
