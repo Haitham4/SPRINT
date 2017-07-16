@@ -85,6 +85,8 @@ SPRINT consists of two parts: compute_HSPs and predict_interactions.
  -Tsim < an integer, the threshold Tsim > (optional, default: 35) 
 
  -M < an integer, Scoring matrix. 1: PAM120, 2: BLOSUM80, 3: BLOSUM62> (optional, default: PAM120)
+ 
+ -add <new_protein_file previous_HSP_file_name> (optional, if new protein sequences are added and only HSPs in those sequences will be computed. New HSPs will be appended to previous_HSP_file. hsp_output_file_name will be ignored)
 
 2. predict_interactions calculates the scores for given pairs or perform the entire interactome prediction.
  In order to run predict_interactions type "bin/predict_interactions" followed by options:
@@ -93,7 +95,7 @@ SPRINT consists of two parts: compute_HSPs and predict_interactions.
 
  -h < hsp_file > (required)
 
- -Tdom < an integer, the threshold Tdom > (optional, default 40)
+ -Thc < an integer, the threshold to be considered a high count > (optional, default 40)
 
  -tr < training_file > (required)
 
