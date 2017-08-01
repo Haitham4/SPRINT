@@ -27,7 +27,7 @@ string OUTPUT_FN;
 string OUTPUT_pos_FN;
 string OUTPUT_neg_FN;
 int T_hsp_max = 40; //Tdom
-int DEBUG = 1;
+int DEBUG = 0;
 int STATS = 1;
 
 const int NPRO = 20117; //Park_Marcotte_human
